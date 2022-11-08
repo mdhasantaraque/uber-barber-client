@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <header className="p-4 dark:bg-gray-800 dark:text-gray-100 drop-shadow-2xl ">
+    <header className="p-4 bg-gradient-to-r from-green-500 to-gray-800 dark:text-gray-100 drop-shadow-2xl ">
       <div className="container flex justify-between h-16 mx-auto md:justify-center md:space-x-8">
         <ul className="items-stretch hidden space-x-3 md:flex">
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              href="#"
+              to="/"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Home
