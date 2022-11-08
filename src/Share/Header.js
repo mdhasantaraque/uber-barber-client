@@ -19,7 +19,7 @@ const Header = () => {
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              href="#"
+              to="/services"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Service
@@ -28,7 +28,7 @@ const Header = () => {
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              href="#"
+              to="/order"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Order
@@ -55,7 +55,7 @@ const Header = () => {
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              href="#"
+              to="/register"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Register
@@ -64,7 +64,7 @@ const Header = () => {
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              href="#"
+              to="/login"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Login
@@ -73,7 +73,7 @@ const Header = () => {
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              href="#"
+              to="/blog"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Blog
@@ -143,9 +143,9 @@ const Header = () => {
                   <ul className="space-y-4">
                     <li>
                       <Link
-                        to="/courses"
-                        aria-label="courses"
-                        title="Courses"
+                        to="/"
+                        aria-label="home"
+                        title="Home"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Home
@@ -173,9 +173,9 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
-                        to="/courses"
-                        aria-label="courses"
-                        title="Courses"
+                        to="/services"
+                        aria-label="services"
+                        title="Services"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Service
@@ -183,9 +183,9 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
-                        to="/courses"
-                        aria-label="courses"
-                        title="Courses"
+                        to="/order"
+                        aria-label="order"
+                        title="Order"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Order

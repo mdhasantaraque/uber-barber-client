@@ -1,5 +1,4 @@
 import React from "react";
-import { img_1 } from "../assets/barber.jpg";
 
 const Home = () => {
   return (
@@ -8,19 +7,21 @@ const Home = () => {
         <div
           className="hero min-h-screen"
           style={{
-            backgroundImage: `${img_1}`,
+            backgroundImage: `url("https://i.ibb.co/9btzhBd/barber.jpg")`,
           }}
         >
-          <div className="hero-overlay bg-opacity-90"></div>
+          <div className="hero-overlay bg-opacity-50"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+              <h1 className="mb-5 text-fuchsia-100 text-5xl font-bold">
+                Uber barber
+              </h1>
+              <p className="mb-5">So fresh and so clean</p>
               <p className="mb-5">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+                Always fulfilling your expectations <br /> Get inspired for a
+                new look this season. <br />
+                See our gallery and find a cut that suits you this fall.
               </p>
-              <button className="btn btn-primary">Get Started</button>
             </div>
           </div>
         </div>
