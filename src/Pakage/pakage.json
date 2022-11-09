@@ -1,0 +1,56 @@
+[
+  {
+    "service_id": "01",
+    "service": "Home Service",
+    "style": "Undercut",
+    "price": "$ 58",
+    "review": "4.9",
+    "image": "https://i.ibb.co/grTDPR1/Haircuts-for-men-1.png",
+    "details": "The undercut is a very popular modern haircut where the sides and back are clipped short or shaved. Traditionally, the undercut haircut features a full disconnect and is not faded, and the hair on top is left much longer. Some guys will ask their barber to taper the cut to create an undercut fade. The undercut can be combined with a range of men's hairstyles to create a trendy look. The hair on top can be combed over, swept to the side, slicked back, brushed up, styled into a pompadour, or made to get a quiff. Ultimately, the undercut is one of the coolest “short on the sides, long on the top” haircuts you can have these days."
+  },
+  {
+    "service_id": "02",
+    "service": "Home Service",
+    "style": "Pompadour",
+    "price": "$ 42",
+    "review": "4.6",
+    "image": "https://i.ibb.co/DzBgR7N/Haircuts-for-Men-2.png",
+    "details": "The pompadour is a timeless men's hairstyle that features longer hair in the front with short hair on the sides and back. Classy and handsome, the pompadour involves the hair being styled up and back away from the forehead, showing off your hair with some volume. Pompadour styles are ideal for guys with thick, straight, or wavy hair. Because volume is essential to the look, use a product with a high hold like a pomade, putty, or gel to make sure your hair stays put throughout the day."
+  },
+  {
+    "service_id": "03",
+    "service": "Home Service",
+    "style": "Quiff",
+    "price": "$ 53",
+    "review": "4.5",
+    "image": "https://i.ibb.co/JrpYsmK/Haircuts-for-Men-3.png",
+    "details": "The quiff is another classic men’s hairstyle that is very similar to the pompadour. They both feature hair that is styled back and up away from the forehead with volume. The quiff differs from the pompadour by first brushing the hair forward before styling it up and back, and is typically a more casual and messy hairstyle for men. Coupled with a fade cut on the sides, the quiff haircut is versatile and trendy for guys with all hair types."
+  },
+  {
+    "service_id": "04",
+    "service": "Home Service",
+    "style": "Trimmed Beard",
+    "price": "$ 35",
+    "review": "4.8",
+    "image": "https://i.ibb.co/94s6J2W/Beard-1.png",
+    "details": "A handlebar mustache can become a strong basis for different beard styles. It comes in different length but with one common trait - the ends of your mustache should be curled. You can achieve their shape by wrapping the ends around your fingers dipped into the curling wax in an orderly fashion. Alternatively, for a quick result, resort to a curling wand and a styling product. To showcase the beauty and quirkiness of your handlebar mustache shape, the beard should be well-trimmed. You can go with a tapered or faded beard, disconnected from the mustache and sideburns, unless you've managed to grow out a really long and curved handlebar. In this case, you can let it blend into other facial hair."
+  },
+  {
+    "service_id": "05",
+    "service": "Home Service",
+    "style": "Imperial Beard",
+    "price": "$ 41",
+    "review": "4.6",
+    "image": "https://i.ibb.co/mrnXjH5/Beard-2.jpg",
+    "details": "What's an Imperial without a little extra? This style is for those who want to Medusa-fy their face and make some waves. The mustache enjoyed popularity during the 19th Century, when men wore it as part of wealth or sophistication symbols - but you can adapt your look by changing up how thickly packed on top of one another these mustaches come! Whether with fuller beard growths at points throughout its length (ideal if they're short) OR just well groomed chinstrap duty alone; there'll always be something special about this popular facial gadgetry."
+  },
+  {
+    "service_id": "06",
+    "service": "Home Service",
+    "style": "Ducktail",
+    "price": "$ 39",
+    "review": "4.2",
+    "image": "https://i.ibb.co/zQgT1gd/Beard-3.jpg",
+    "details": "If you want to give your traditional full beard an unusual twist, try out a ducktail beard. As the name implies, the shape of such beard styles resembles real ducktails. This commonly harnessed beard style is a combination of a rugged full beard and a neatly trimmed one. It's highly popular among male celebrities. Note though that this beard style doesn't suit everyone. If your face is narrow and long, it won't work for you. In other cases, the ducktail beards sit perfectly fine. When choosing what to pair them with, consider a messy or slicked back hairstyle."
+  }
+]
