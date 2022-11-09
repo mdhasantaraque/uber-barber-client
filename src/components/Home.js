@@ -16,11 +16,12 @@ const Home = () => {
               <h1 className="mb-5 text-fuchsia-100 text-5xl font-bold">
                 Uber barber
               </h1>
-              <p className="mb-5">So fresh and so clean</p>
+              <p className="text-3xl font-bold text-red-900">Hurray!!!</p>
+              <p className="mb-2">Men Home Service Saloon</p>
+              <p className="mb-2">So fresh and so clean</p>
               <p className="mb-5">
-                Always fulfilling your expectations <br /> Get inspired for a
-                new look this season. <br />
-                See our gallery and find a cut that suits you this fall.
+                Not ready to go back to your CTG salon? <br /> Try these at-home
+                spa, haircuts and nail services
               </p>
             </div>
           </div>

@@ -1,35 +1,52 @@
 import React, { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
-  const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, nameUpdate } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
   const handleCreateUser = (event) => {
     event.preventDefault();
     const form = event.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    // const user = { email, password };
-    // console.log(user);
+
+    if (password.length < 6) {
+      alert("Should be at least 6 character");
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         form.reset();
         console.log(user);
+        navigate(from, { replace: true });
+        nameUpdate(name)
+          .then(() => {
+            // toast.success("You successfully registered");
+          })
+          .catch((error) => toast.error(error.message));
       })
-      .catch((error) => console.error(error.message));
+      .catch((error) => toast.error(error.message));
   };
   const handleGoogle = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
         console.log(user);
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
+        // toast.error("You successfully registered");
       })
       .catch((error) => {
-        console.error(error.message);
+        toast.error(error.message);
       });
   };
 
