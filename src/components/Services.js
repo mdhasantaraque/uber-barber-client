@@ -12,12 +12,15 @@ const Services = () => {
   return (
     <div className="w-5/6 mx-auto">
       <div className="my-6">
-        <p className="text-3xl font-semibold">Uber Barber</p>
-        <p className="text-xl font-semibold">Men's Salon Home Service</p>
-        <p>
+        <p className="text-3xl font-bold">Uber Barber</p>
+        <p className="text-xl font-semibold  dark:text-violet-900">
+          Men's Salon Home Service
+        </p>
+        <p className="text-lg font-semibold">
           Hair cutting, Grooming & Pampering, specifically designed for the
-          EXTRAORDINARY Men. Experience superior services with us The GentsCare
-          is a barbershop, lounge, and spa offering quality grooming and
+          EXTRAORDINARY Men.
+          <br /> Experience superior services with us The GentsCare is a
+          barbershop, <br /> lounge, and spa offering quality grooming and
           pampering services
         </p>
       </div>

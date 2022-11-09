@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-  const { price, review, image, style, details, service_cat, _id } = service;
+  const { price, rating, image, style, details, service_cat, _id } = service;
+  //   console.log(_id);
   return (
     <div>
       <div className="max-w-xs shadow-md bg-gradient-to-r from-green-900 to-green-800 dark:text-gray-50">
@@ -29,7 +30,7 @@ const ServiceCard = ({ service }) => {
             </Link>
           </div>
           <div className="flex flex-wrap items-center justify-center pt-1 space-x-2 text-xs dark:text-gray-400">
-            <span>Rating: {review}</span>
+            <span>Rating: {rating}</span>
             <span>
               <div className="rating">
                 <input

@@ -31,7 +31,7 @@ const Register = () => {
         navigate(from, { replace: true });
         nameUpdate(name)
           .then(() => {
-            // toast.success("You successfully registered");
+            toast.success("You successfully registered");
           })
           .catch((error) => toast.error(error.message));
       })
@@ -43,7 +43,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         navigate(from, { replace: true });
-        // toast.error("You successfully registered");
+        toast.error("You successfully registered");
       })
       .catch((error) => {
         toast.error(error.message);

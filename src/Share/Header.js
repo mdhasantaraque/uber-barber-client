@@ -45,24 +45,17 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <Link
-          rel="noopener noreferrer"
-          to="/"
-          aria-label="Back to homepage"
-          className="flex items-center p-2"
-        >
-          <div>
-            {user?.photoURL ? (
-              <div className="avatar">
-                <div className="w-12">
-                  <img src={user?.photoURL} />
-                </div>
+        <li>
+          {user?.photoURL ? (
+            <label className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src={user?.photoURL} />
               </div>
-            ) : (
-              <FaUserCircle></FaUserCircle>
-            )}
-          </div>
-        </Link>
+            </label>
+          ) : (
+            <FaUserCircle></FaUserCircle>
+          )}
+        </li>
         <ul className="items-stretch hidden space-x-3 md:flex">
           <li className="flex">
             <Link
