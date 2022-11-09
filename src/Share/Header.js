@@ -38,10 +38,10 @@ const Header = () => {
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              to="/order"
+              to="/reviews"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
-              Order
+              My review
             </Link>
           </li>
         </ul>
@@ -201,12 +201,12 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
-                        to="/order"
-                        aria-label="order"
-                        title="Order"
+                        to="/reviews"
+                        aria-label="reviews"
+                        title="Reviews"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Order
+                        My review
                       </Link>
                     </li>
                     <li>
