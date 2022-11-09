@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 // import { toast } from "react-toastify";
 import { AuthContext } from "./AuthProvider";
 import MyReviewCard from "./MyReviewCard";
@@ -12,10 +13,28 @@ const MyReview = () => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setReviews(data);
       });
   }, [user?.email]);
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Would you want to delete?");
+    if (proceed) {
+      fetch(`http://localhost:5000/reviews/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            toast.success("Successfully deleted");
+          }
+          const remaining = reviews.filter((review) => review._id !== id);
+          setReviews(remaining);
+        });
+    }
+  };
 
   return (
     <div>
@@ -30,7 +49,12 @@ const MyReview = () => {
             <div className="hero-overlay bg-opacity-90"></div>
             <div>
               {reviews.map((review) => (
-                <MyReviewCard key={review._id} review={review}></MyReviewCard>
+                <MyReviewCard
+                  key={review._id}
+                  review={review}
+                  const
+                  handleDelete={handleDelete}
+                ></MyReviewCard>
               ))}
             </div>
           </div>

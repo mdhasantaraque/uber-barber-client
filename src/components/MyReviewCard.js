@@ -1,7 +1,8 @@
 import React from "react";
 
-const MyReviewCard = ({ review }) => {
+const MyReviewCard = ({ review, handleDelete }) => {
   const { _id, serviceName, reviewer, email, message, image } = review;
+
   return (
     <div>
       <div className="relative flex flex-col max-w-xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-900 dark:text-gray-100 divide-gray-700 my-5">
@@ -9,7 +10,12 @@ const MyReviewCard = ({ review }) => {
           <h3 className="text-3xl font-semibold">{serviceName}</h3>
           <p className="text-sm dark:text-gray-400">{message}</p>
           <div className="mt-4">
-            <button className="btn btn-outline btn-accent mx-4">Delete</button>
+            <button
+              onClick={() => handleDelete(_id)}
+              className="btn btn-outline btn-accent mx-4"
+            >
+              Delete
+            </button>
             <button className="btn btn-outline btn-error">Update</button>
           </div>
         </div>
