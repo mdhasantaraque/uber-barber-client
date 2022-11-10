@@ -50,7 +50,7 @@ const Login = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            localStorage.setItem("Uber-token", data.token);
+            localStorage.setItem("uber-token", data.token);
             navigate(from, { replace: true });
           });
       })
@@ -65,7 +65,7 @@ const Login = () => {
         const user = result.user;
         navigate(from, { replace: true });
         toast.success("You successfully Login");
-        console.log(user);
+        // console.log(user);
         navigate(from, { replace: true });
       })
       .catch((error) => {

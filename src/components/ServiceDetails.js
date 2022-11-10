@@ -21,37 +21,42 @@ const ServiceDetails = () => {
   // New review create
 
   const handleReview = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const email = user?.email || "unregistered";
-    const message = form.message.value;
-    const style = form.services.value;
-    const image = user?.photoURL || "unregistered";
+    if (!user) {
+      toast.error("Login first for review");
+      return;
+    } else {
+      event.preventDefault();
+      const form = event.target;
+      const name = form.name.value;
+      const email = user?.email || "unregistered";
+      const message = form.message.value;
+      const style = form.services.value;
+      const image = user?.photoURL || "unregistered";
 
-    const review = {
-      serviceName: style,
-      serviceId: _id,
-      reviewer: name,
-      email,
-      message,
-      image,
-    };
-    console.log(review);
+      const review = {
+        serviceName: style,
+        serviceId: _id,
+        reviewer: name,
+        email,
+        message,
+        image,
+      };
+      console.log(review);
 
-    fetch("http://localhost:5000/reviews", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(review),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          toast.success("Your review successfully posted");
-          form.reset();
-        }
+      fetch("http://localhost:5000/reviews", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(review),
       })
-      .catch((err) => console.error(err));
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            toast.success("Your review successfully posted");
+            form.reset();
+          }
+        })
+        .catch((err) => console.error(err));
+    }
   };
 
   return (
