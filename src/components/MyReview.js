@@ -12,7 +12,7 @@ const MyReview = () => {
   // My review API call
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(`https://uber-barber-server.vercel.app/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -30,7 +30,7 @@ const MyReview = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Would you want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://uber-barber-server.vercel.app/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

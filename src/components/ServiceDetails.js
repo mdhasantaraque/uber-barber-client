@@ -14,7 +14,7 @@ const ServiceDetails = () => {
 
   // Review API call
 
-  fetch(`http://localhost:5000/reviews/${_id}`)
+  fetch(`https://uber-barber-server.vercel.app/reviews/${_id}`)
     .then((res) => res.json())
     .then((data) => setReviews(data));
 
@@ -43,7 +43,7 @@ const ServiceDetails = () => {
       };
       console.log(review);
 
-      fetch("http://localhost:5000/reviews", {
+      fetch("https://uber-barber-server.vercel.app/reviews", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(review),

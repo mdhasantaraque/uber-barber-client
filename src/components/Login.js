@@ -40,7 +40,7 @@ const Login = () => {
         toast.success("You successfully Login");
         console.log(user);
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://uber-barber-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

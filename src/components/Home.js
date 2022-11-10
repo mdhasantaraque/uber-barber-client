@@ -10,7 +10,7 @@ const Home = () => {
   // API call for Home service card
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://uber-barber-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

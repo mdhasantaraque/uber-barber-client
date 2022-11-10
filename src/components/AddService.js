@@ -26,7 +26,7 @@ const AddService = () => {
     };
     console.log(services);
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://uber-barber-server.vercel.app/services", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(services),
