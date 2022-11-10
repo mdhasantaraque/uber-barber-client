@@ -5,28 +5,19 @@ import { AuthContext } from "./AuthProvider";
 import MyReviewCard from "./MyReviewCard";
 
 const MyReview = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   useTitle("My review");
 
   // My review API call
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("uber-token")}`,
-      },
-    })
-      .then((res) => {
-        if (res.status === 401 || res.status === 403) {
-          return logOut();
-        }
-        return res.json();
-      })
+    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+      .then((res) => res.json())
       .then((data) => {
         setReviews(data);
       });
-  }, [user?.email, logOut]);
+  }, [user?.email]);
 
   // review edit
   const handleEdit = (id) => {
