@@ -2,38 +2,41 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const AddService = () => {
+  // New service add field
+
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+    const style = form.name.value;
+    const price = form.price.value;
+    const image = form.img.value;
+    const details = form.message.value;
+    const service = form.service.value;
+    const rating = form.rating.value;
 
-    const message = form.message.value;
-    const style = form.services.value;
-    const image = form.image.value;
-
-    const review = {
-      serviceName: style,
-
-      reviewer: name,
-
-      message,
+    const services = {
+      style,
+      price,
       image,
+      details,
+      service,
+      rating,
     };
-    console.log(review);
+    console.log(services);
 
-    fetch("http://localhost:5000/services", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(review),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledge) {
-          toast.success("Your review successfully posted");
-          form.reset();
-        }
-      })
-      .catch((err) => console.error(err));
+    // fetch("http://localhost:5000/services", {
+    //   method: "POST",
+    //   headers: { "content-type": "application/json" },
+    //   body: JSON.stringify(services),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.acknowledge) {
+    //       toast.success("Services successfully added");
+    //       form.reset();
+    //     }
+    //   })
+    //   .catch((err) => toast.error(err));
   };
   return (
     <div className="p-4 bg-gradient-to-r from-green-500 to-gray-800 dark:text-gray-100 ">
@@ -53,7 +56,7 @@ const AddService = () => {
               <div className="form-control">
                 <label className="text-sm sr-only">Service name</label>
                 <input
-                  name="style"
+                  name="name"
                   type="text"
                   placeholder="Service name"
                   className="w-full rounded-md text-black focus:ring focus:ring-violet-400 dark:border-gray-700 mb-2 p-2"
