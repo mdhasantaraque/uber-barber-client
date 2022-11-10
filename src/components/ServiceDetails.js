@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
+import useTitle from "../Hooks/useTitle";
 import { AuthContext } from "./AuthProvider";
 import ServiceReview from "./ServiceReview";
 
@@ -9,6 +10,7 @@ const ServiceDetails = () => {
     useLoaderData();
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  useTitle("Service Details");
 
   // Review API call
 

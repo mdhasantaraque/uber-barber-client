@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import useTitle from "../Hooks/useTitle";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
+  useTitle("Service");
 
   // API calling for all services
 

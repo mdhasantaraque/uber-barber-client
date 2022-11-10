@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-// import { toast } from "react-toastify";
+import useTitle from "../Hooks/useTitle";
 import { AuthContext } from "./AuthProvider";
 import MyReviewCard from "./MyReviewCard";
 
 const MyReview = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  useTitle("My review");
 
   // My review API call
 
@@ -31,7 +32,7 @@ const MyReview = () => {
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            toast.success("Successfully deleted");
+            toast.error("Successfully deleted");
           }
           const remaining = reviews.filter((review) => review._id !== id);
           setReviews(remaining);

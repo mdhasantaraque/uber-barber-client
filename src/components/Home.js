@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 import HomeCard from "./HomeCard";
 
 const Home = () => {
   const [services, setServices] = useState([]);
+  useTitle("Home");
 
   // API call for Home service card
 

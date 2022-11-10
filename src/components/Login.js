@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import useTitle from "../Hooks/useTitle";
 import { AuthContext } from "./AuthProvider";
 
 const Login = () => {
   const { login, signInWithGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  useTitle("Login");
 
   const from = location.state?.from?.pathname || "/";
 
@@ -21,7 +23,7 @@ const Login = () => {
     // console.log(user);
 
     if (password.length < 6) {
-      alert("Should be at least 6 character");
+      toast.error("Should be at least 6 character");
       return;
     }
 

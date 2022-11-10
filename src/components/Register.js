@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import useTitle from "../Hooks/useTitle";
 import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
@@ -9,6 +10,7 @@ const Register = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+  useTitle("Register");
 
   const from = location.state?.from?.pathname || "/";
 

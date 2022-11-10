@@ -1,7 +1,9 @@
 import React from "react";
 import { toast } from "react-toastify";
+import useTitle from "../Hooks/useTitle";
 
 const AddService = () => {
+  useTitle("Addservice");
   // New service add field
 
   const handleAddService = (event) => {
@@ -19,24 +21,24 @@ const AddService = () => {
       price,
       image,
       details,
-      service,
+      service_cat: service,
       rating,
     };
     console.log(services);
 
-    // fetch("http://localhost:5000/services", {
-    //   method: "POST",
-    //   headers: { "content-type": "application/json" },
-    //   body: JSON.stringify(services),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.acknowledge) {
-    //       toast.success("Services successfully added");
-    //       form.reset();
-    //     }
-    //   })
-    //   .catch((err) => toast.error(err));
+    fetch("http://localhost:5000/services", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(services),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledge) {
+          toast.success("Services successfully added");
+          form.reset();
+        }
+      })
+      .catch((err) => toast.error(err));
   };
   return (
     <div className="p-4 bg-gradient-to-r from-green-500 to-gray-800 dark:text-gray-100 ">

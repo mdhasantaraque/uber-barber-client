@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../Hooks/useTitle";
 
 const Blog = () => {
+  useTitle("Blog");
   return (
     <div>
       <section className="bg-gradient-to-r from-black to-green-900 dark:text-gray-100">
