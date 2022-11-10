@@ -6,10 +6,13 @@ import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
   const { createUser, signInWithGoogle, nameUpdate } = useContext(AuthContext);
+
   const location = useLocation();
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
+
+  // New user create
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -37,6 +40,9 @@ const Register = () => {
       })
       .catch((error) => toast.error(error.message));
   };
+
+  // New user create by google
+
   const handleGoogle = () => {
     signInWithGoogle()
       .then((result) => {

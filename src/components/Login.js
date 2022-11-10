@@ -16,12 +16,16 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+
     // const user = { email, password };
     // console.log(user);
+
     if (password.length < 6) {
       alert("Should be at least 6 character");
       return;
     }
+
+    // login
 
     login(email, password)
       .then((result) => {
@@ -33,6 +37,9 @@ const Login = () => {
       })
       .catch((error) => toast.error(error.message));
   };
+
+  // Google signIn
+
   const handleGoogle = () => {
     signInWithGoogle()
       .then((result) => {

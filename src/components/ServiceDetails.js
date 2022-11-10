@@ -10,9 +10,13 @@ const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
 
+  // Review API call
+
   fetch(`http://localhost:5000/reviews/${_id}`)
     .then((res) => res.json())
     .then((data) => setReviews(data));
+
+  // New review create
 
   const handleReview = (event) => {
     event.preventDefault();

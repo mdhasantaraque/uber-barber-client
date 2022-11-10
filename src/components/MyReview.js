@@ -9,6 +9,7 @@ const MyReview = () => {
   const [reviews, setReviews] = useState([]);
 
   // My review API call
+
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
       .then((res) => res.json())
@@ -17,6 +18,8 @@ const MyReview = () => {
         setReviews(data);
       });
   }, [user?.email]);
+
+  // review delete call
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Would you want to delete?");

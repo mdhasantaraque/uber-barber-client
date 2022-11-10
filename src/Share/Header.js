@@ -38,10 +38,10 @@ const Header = () => {
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              to="/reviews"
+              to="/blog"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
-              My review
+              Blog
             </Link>
           </li>
         </ul>
@@ -57,24 +57,35 @@ const Header = () => {
           )}
         </li>
         <ul className="items-stretch hidden space-x-3 md:flex">
-          <li className="flex">
-            <Link
-              rel="noopener noreferrer"
-              to="/blog"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-            >
-              Blog
-            </Link>
-          </li>
           {user?.uid ? (
-            <li className="flex">
-              <button
-                onClick={handleToLogOut}
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-              >
-                LogOut
-              </button>
-            </li>
+            <>
+              <li className="flex">
+                <Link
+                  rel="noopener noreferrer"
+                  to="/reviews"
+                  className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                >
+                  My review
+                </Link>
+              </li>
+              <li className="flex">
+                <Link
+                  rel="noopener noreferrer"
+                  to="/addservice"
+                  className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                >
+                  Add Service
+                </Link>
+              </li>
+              <li className="flex">
+                <button
+                  onClick={handleToLogOut}
+                  className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                >
+                  LogOut
+                </button>
+              </li>
+            </>
           ) : (
             <>
               <li className="flex">
@@ -171,42 +182,12 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
-                        to="/register"
-                        aria-label="register"
-                        title="Register"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Register
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/login"
-                        aria-label="login"
-                        title="Login"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        <p>Login</p>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
                         to="/services"
                         aria-label="services"
                         title="Services"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Service
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/reviews"
-                        aria-label="reviews"
-                        title="Reviews"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        My review
                       </Link>
                     </li>
                     <li>
@@ -219,14 +200,62 @@ const Header = () => {
                         Blog
                       </Link>
                     </li>
-                    <li className="flex">
-                      <button
-                        onClick={handleToLogOut}
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        LogOut
-                      </button>
-                    </li>
+                    {user?.uid ? (
+                      <>
+                        <li>
+                          <Link
+                            to="/reviews"
+                            aria-label="reviews"
+                            title="Reviews"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            My review
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/addservice"
+                            aria-label="addservice"
+                            title="Addservice"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            Add Service
+                          </Link>
+                        </li>
+
+                        <li className="flex">
+                          <button
+                            onClick={handleToLogOut}
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            LogOut
+                          </button>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li>
+                          <Link
+                            to="/register"
+                            aria-label="register"
+                            title="Register"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            Register
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/login"
+                            aria-label="login"
+                            title="Login"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            <p>Login</p>
+                          </Link>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 </nav>
               </div>
