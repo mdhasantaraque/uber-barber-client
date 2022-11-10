@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyReviewCard = ({ review, handleDelete }) => {
+const MyReviewCard = ({ review, handleDelete, handleEdit }) => {
   const { _id, serviceName, reviewer, email, message, image } = review;
 
   return (
@@ -18,7 +18,10 @@ const MyReviewCard = ({ review, handleDelete }) => {
                 >
                   Delete
                 </button>
-                <button className="btn btn-outline btn-error">
+                <button
+                  onClick={() => handleEdit(_id)}
+                  className="btn btn-outline btn-error"
+                >
                   Edit review
                 </button>
               </div>

@@ -46,7 +46,7 @@ const ServiceDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.acknowledge) {
+        if (data.acknowledged) {
           toast.success("Your review successfully posted");
           form.reset();
         }

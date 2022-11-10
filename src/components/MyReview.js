@@ -20,6 +20,12 @@ const MyReview = () => {
       });
   }, [user?.email]);
 
+  // review edit
+  const handleEdit = (id) => {
+    const proceed = window.confirm("Would you want to edit?");
+    console.log(proceed);
+  };
+
   // review delete call
 
   const handleDelete = (id) => {
@@ -58,6 +64,7 @@ const MyReview = () => {
                   review={review}
                   const
                   handleDelete={handleDelete}
+                  handleEdit={handleEdit}
                 ></MyReviewCard>
               ))}
             </div>
