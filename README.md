@@ -8,7 +8,7 @@ https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-
 
 ## Firebase live link
 
-https://uber-barber-server.vercel.app
+https://uber-barber-client.web.app
 
 ## Project name: Uber Barber
 
