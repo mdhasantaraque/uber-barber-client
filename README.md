@@ -10,6 +10,10 @@ https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-
 
 https://uber-barber-client.web.app
 
+or
+
+https://uber-barber-client.firebaseapp.com
+
 ## Project name: Uber Barber
 
 ## My work in this assignment...
