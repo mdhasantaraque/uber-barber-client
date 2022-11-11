@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { authToken } from "../api/auth";
 import useTitle from "../Hooks/useTitle";
 import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
-  const { createUser, signInWithGoogle, nameUpdate } = useContext(AuthContext);
+  const { createUser, signInWithGoogle } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Register = () => {
   const handleCreateUser = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+    // const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
 
@@ -31,14 +32,9 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        form.reset();
         console.log(user);
-        navigate(from, { replace: true });
-        nameUpdate(name)
-          .then(() => {
-            toast.success("You successfully registered");
-          })
-          .catch((error) => toast.error(error.message));
+        authToken(user);
+        form.reset();
       })
       .catch((error) => toast.error(error.message));
   };
@@ -50,8 +46,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user);
-        navigate(from, { replace: true });
-        toast.error("You successfully registered");
+        authToken(user);
       })
       .catch((error) => {
         toast.error(error.message);

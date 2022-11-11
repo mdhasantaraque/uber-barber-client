@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { authToken } from "../api/auth";
 import useTitle from "../Hooks/useTitle";
 import { AuthContext } from "./AuthProvider";
 
@@ -32,27 +33,8 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
-
-        const currentUser = {
-          email: user.email,
-        };
+        authToken(user);
         form.reset();
-        toast.success("You successfully Login");
-        console.log(user);
-
-        fetch("https://uber-barber-server.vercel.app/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            localStorage.setItem("uber-token", data.token);
-            navigate(from, { replace: true });
-          });
       })
       .catch((error) => toast.error(error.message));
   };
@@ -63,10 +45,7 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        navigate(from, { replace: true });
-        toast.success("You successfully Login");
-        // console.log(user);
-        navigate(from, { replace: true });
+        authToken(user);
       })
       .catch((error) => {
         toast.error(error.message);
@@ -106,7 +85,7 @@ const Login = () => {
                 <div>
                   <label className="text-sm sr-only">Your password</label>
                   <input
-                    name="Password"
+                    name="password"
                     type="password"
                     placeholder="Password"
                     className="w-full p-2 text-black rounded-md focus:ring focus:ring-violet-400 dark:border-gray-700"
@@ -125,7 +104,7 @@ const Login = () => {
                   type="submit"
                   className="w-full py-2 font-semibold rounded btn btn-outline btn-accent"
                 >
-                  Resister Now
+                  Login
                 </button>
               </form>
               <button

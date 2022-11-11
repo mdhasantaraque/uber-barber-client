@@ -13,6 +13,7 @@ const Services = () => {
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
+
   return (
     <div className="w-5/6 mx-auto">
       <div className="my-6">

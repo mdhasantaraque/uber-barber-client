@@ -16,8 +16,8 @@ const Blog = () => {
             <div className="hero-overlay bg-opacity-90"></div>
             <div>
               <div className="py-8">
-                <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm dark:bg-green-900">
-                  <div className="mt-3 text-left">
+                <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm dark:bg-green-200">
+                  <div className="mt-3 text-left text-black">
                     <p className="text-2xl font-bold hover:underline">
                       No.1- Difference between SQL and NoSQL?
                     </p>
@@ -38,8 +38,8 @@ const Blog = () => {
                     </p>
                   </div>
                 </div>
-                <div className="container max-w-4xl px-10 py-6 mx-auto my-5 rounded-lg shadow-sm dark:bg-green-900">
-                  <div className="mt-3 text-left">
+                <div className="container max-w-4xl px-10 py-6 mx-auto my-5 rounded-lg shadow-sm dark:bg-green-200">
+                  <div className="mt-3 text-left  text-black">
                     <p className="text-2xl font-bold hover:underline">
                       No.2- What is JWT, and how does it work?
                     </p>
@@ -83,8 +83,8 @@ const Blog = () => {
                     </p>
                   </div>
                 </div>
-                <div className="container max-w-4xl px-10 py-6 mx-auto my-5 rounded-lg shadow-sm dark:bg-green-900">
-                  <div className="mt-3 text-left">
+                <div className="container max-w-4xl px-10 py-6 mx-auto my-5 rounded-lg shadow-sm dark:bg-green-200">
+                  <div className="mt-3 text-left  text-black">
                     <p className="text-2xl font-bold hover:underline">
                       No.3- What is the difference between javascript and
                       NodeJS?
@@ -146,8 +146,8 @@ const Blog = () => {
                     </p>
                   </div>
                 </div>
-                <div className="container max-w-4xl px-10 py-6 mx-auto my-5 rounded-lg shadow-sm dark:bg-green-900">
-                  <div className="mt-3 text-left">
+                <div className="container max-w-4xl px-10 py-6 mx-auto my-5 rounded-lg shadow-sm dark:bg-green-200">
+                  <div className="mt-3 text-left  text-black">
                     <p className="text-2xl font-bold hover:underline">
                       No.4- How does Node JS handle multiple requests at the
                       same time?

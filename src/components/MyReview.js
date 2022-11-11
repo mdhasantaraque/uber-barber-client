@@ -5,19 +5,32 @@ import { AuthContext } from "./AuthProvider";
 import MyReviewCard from "./MyReviewCard";
 
 const MyReview = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   useTitle("My review");
-
+  console.log(reviews);
   // My review API call
 
   useEffect(() => {
-    fetch(`https://uber-barber-server.vercel.app/reviews?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(
+      `https://uber-barber-server.vercel.app/reviews?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("uber-token")}`,
+        },
+      }
+    )
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          return logOut();
+        }
+        return res.json();
+      })
       .then((data) => {
         setReviews(data);
+        console.log(data);
       });
-  }, [user?.email]);
+  }, [user?.email, logOut]);
 
   // review edit
   const handleEdit = (id) => {
@@ -30,7 +43,7 @@ const MyReview = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Would you want to delete?");
     if (proceed) {
-      fetch(`https://uber-barber-server.vercel.app/${id}`, {
+      fetch(`https://uber-barber-server.vercel.app/reviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -57,15 +70,36 @@ const MyReview = () => {
           >
             <div className="hero-overlay bg-opacity-90"></div>
             <div>
-              {reviews.map((review) => (
-                <MyReviewCard
-                  key={review._id}
-                  review={review}
-                  const
-                  handleDelete={handleDelete}
-                  handleEdit={handleEdit}
-                ></MyReviewCard>
-              ))}
+              {reviews.length <= 0 ? (
+                <div className="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
+                  <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+                    <div className="max-w-md text-center">
+                      <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-600">
+                        <span className="sr-only">No review</span>No reviews
+                        were added
+                      </h2>
+                      <p className="text-2xl font-semibold md:text-3xl">
+                        Sorry, we couldn't find any review.
+                      </p>
+                      <p className="mt-4 mb-8 dark:text-gray-400">
+                        But don't worry, you can added review.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  {reviews.map((review) => (
+                    <MyReviewCard
+                      key={review._id}
+                      review={review}
+                      const
+                      handleDelete={handleDelete}
+                      handleEdit={handleEdit}
+                    ></MyReviewCard>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

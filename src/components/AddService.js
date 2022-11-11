@@ -4,6 +4,7 @@ import useTitle from "../Hooks/useTitle";
 
 const AddService = () => {
   useTitle("Addservice");
+
   // New service add field
 
   const handleAddService = (event) => {
@@ -24,7 +25,7 @@ const AddService = () => {
       service_cat: service,
       rating,
     };
-    console.log(services);
+    // console.log(services);
 
     fetch("https://uber-barber-server.vercel.app/services", {
       method: "POST",

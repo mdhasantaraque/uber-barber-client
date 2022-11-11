@@ -16,7 +16,14 @@ const ServiceDetails = () => {
 
   fetch(`https://uber-barber-server.vercel.app/reviews/${_id}`)
     .then((res) => res.json())
-    .then((data) => setReviews(data));
+    .then((data) => {
+      if (!data) {
+        toast.error("This service no review");
+      }
+      setReviews(data);
+    });
+
+  // console.log(reviews);
 
   // New review create
 
@@ -197,9 +204,16 @@ const ServiceDetails = () => {
             <div className="flex flex-wrap justify-between"></div>
           </div>
           <div>
-            {reviews.map((review) => (
-              <ServiceReview key={review._id} review={review}></ServiceReview>
-            ))}
+            <div>
+              {reviews.map((review) => (
+                <ServiceReview key={review._id} review={review}></ServiceReview>
+              ))}
+            </div>
+            <div className="card w-96 dark:bg-gray-900 shadow-xl">
+              <div className="card-body">
+                <h2 className="card-title">Please give your review</h2>
+              </div>
+            </div>
           </div>
         </div>
       </section>

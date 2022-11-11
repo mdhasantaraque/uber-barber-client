@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         path: "/serviceDetails/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`https://uber-barber-server.vercel.app/${params.id}`),
+          fetch(`https://uber-barber-server.vercel.app/services/${params.id}`),
       },
       {
         path: "/services",
